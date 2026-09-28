@@ -5,32 +5,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LUNA Silver - Vẻ Đẹp Thuần Khiết</title>
     <link rel="stylesheet" href="style.css">
-    <!-- Thêm phông chữ Montserrat giống phong cách Pandora -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Thanh thông báo trên cùng -->
-    <div class="top-bar">
-        Miễn phí giao hàng toàn quốc cho đơn hàng từ 500.000 VNĐ
+    <!-- Popup Bộ Sưu Tập Mới -->
+    <div id="promoPopup" class="popup-overlay">
+        <div class="popup-content">
+            <span class="close-btn" onclick="closePopup()">&times;</span>
+            <h2>BỘ SƯU TẬP MỚI</h2>
+            <p>Khám phá những thiết kế lấp lánh nhất mùa này.</p>
+            <!-- Bạn có thể đổi sp1.png thành ảnh bộ sưu tập thật sau này -->
+            <img src="images/sp1.png" alt="Bộ sưu tập mới">
+            <a href="#products" class="btn-dark" onclick="closePopup()">XEM NGAY</a>
+        </div>
     </div>
 
-    <!-- Header chứa Logo, Tìm kiếm và Icon -->
-    <header class="main-header">
-        <div class="logo">LUNA SILVER</div>
+    <!-- Thanh thông báo trên cùng -->
+    <div class="top-bar">Miễn phí giao hàng toàn quốc cho đơn hàng từ 500.000 VNĐ</div>
+
+    <!-- Header chứa Logo -->
+    <header class="main-header" id="myHeader">
+        <!-- Đã sửa Logo thành link bấm được để quay về đầu trang -->
+        <a href="#" class="logo" style="text-decoration: none;">LUNA SILVER</a>
         <div class="header-right">
             <div class="search-box">
                 <input type="text" placeholder="Bạn cần tìm gì?">
                 <button>🔍</button>
             </div>
             <div class="icons">
-                <span>♡</span>
+                <span onclick="alert('Đã thêm vào danh sách yêu thích!')">♡</span>
                 <span>👤</span>
-                <span>🛒</span>
+                <span onclick="alert('Giỏ hàng của bạn đang trống!')">🛒</span>
             </div>
         </div>
     </header>
 
-    <!-- Thanh Menu điều hướng -->
+    <!-- Thanh Menu -->
     <nav class="main-nav">
         <ul>
             <li><a href="#">BEST SELLERS</a></li>
@@ -40,44 +50,36 @@
             <li><a href="#">NHẪN</a></li>
             <li><a href="#">LẮC TAY</a></li>
             <li><a href="#">LẮC CHÂN</a></li>
-            <li><a href="#">ƯU ĐÃI</a></li>
         </ul>
     </nav>
 
-    <!-- Banner chính (Hero Section) -->
     <section class="hero">
         <div class="hero-content">
             <span class="badge">BEST SELLERS</span>
             <h1>NHỮNG THIẾT KẾ<br>ĐƯỢC YÊU THÍCH NHẤT</h1>
             <a href="#products" class="btn-dark">MUA NGAY</a>
         </div>
-        <!-- Nút chuyển slide mô phỏng -->
-        <button class="arrow left-arrow">‹</button>
-        <button class="arrow right-arrow">›</button>
     </section>
 
-    <!-- Danh sách sản phẩm (Đã thêm 2 sản phẩm mới) -->
     <section id="products">
         <div class="product-grid">
-            <div class="product-card">
-                <img src="images/sp1.png" alt="Dây chuyền bạc LUNA">
+            <div class="product-card" onclick="alert('Đã thêm Dây chuyền Ánh Trăng vào giỏ!')">
+                <img src="images/sp1.png" alt="Dây chuyền">
                 <h3>Dây chuyền Ánh Trăng</h3>
                 <p>450.000 VNĐ</p>
             </div>
-            <div class="product-card">
-                <img src="images/sp2.png" alt="Nhẫn bạc LUNA">
+            <div class="product-card" onclick="alert('Đã thêm Nhẫn LUNA vào giỏ!')">
+                <img src="images/sp2.png" alt="Nhẫn">
                 <h3>Nhẫn LUNA Minimalist</h3>
                 <p>320.000 VNĐ</p>
             </div>
-            <!-- Sản phẩm mới: Lắc tay -->
-            <div class="product-card">
-                <img src="images/sp3.png" alt="Lắc tay bạc LUNA">
+            <div class="product-card" onclick="alert('Đã thêm Lắc tay Tinh Tú vào giỏ!')">
+                <img src="images/sp3.png" alt="Lắc tay">
                 <h3>Lắc tay Tinh Tú</h3>
                 <p>380.000 VNĐ</p>
             </div>
-            <!-- Sản phẩm mới: Lắc chân -->
-            <div class="product-card">
-                <img src="images/sp4.png" alt="Lắc chân bạc LUNA">
+            <div class="product-card" onclick="alert('Đã thêm Lắc chân Gió Mùa vào giỏ!')">
+                <img src="images/sp4.png" alt="Lắc chân">
                 <h3>Lắc chân Gió Mùa</h3>
                 <p>290.000 VNĐ</p>
             </div>
@@ -88,5 +90,11 @@
         <p>&copy; 2026 LUNA Silver. Bảo hành bạc trọn đời.</p>
         <p>Hotline: 09xx.xxx.xxx | Email: cskh@lunasilver.vn</p>
     </footer>
+
+    <!-- Nút cuộn lên đầu trang -->
+    <button id="backToTop" onclick="scrollToTop()">↑</button>
+
+    <!-- Liên kết tệp hiệu ứng chuyển động -->
+    <script src="script.js"></script>
 </body>
 </html>
